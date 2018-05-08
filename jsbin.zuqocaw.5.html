@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by veni75 (http://jsbin.com/zuqocaw/5/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="lineToCenter">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Practice JavaScript by drawing</title>
+</head>
+<body>
+  <canvas id="myCanvas" height="300" width="450" style="border: 1px solid black"></canvas>
+<script id="jsbin-javascript">
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+var canvasWidth = canvas.width;
+var canvasHeight = canvas.height;
+
+
+function lineToCenter (x,y,color) {
+  
+context.beginPath();
+context.moveTo(x,y);
+context.lineTo(canvasWidth/2, canvasHeight/2);
+context.strokeStyle = 'green';
+context.stroke();
+ return ;
+}
+
+var randomW = function(max, min) {
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+    var randomH = function(max, min) {
+  return Math.floor(Math.random()*(max-min+1)+min);
+    }
+    var randomColor = function(max, min) {
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+for (i=0; i<=200; i=i+1) {
+ lineToCenter(randomW (canvasWidth,0),randomH (canvasHeight,0),'green'); 
+}
+
+
+
+</script>
+</body>
+</html>

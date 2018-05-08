@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by veni75 (http://jsbin.com/qowexiq/12/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="pillango">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JS Bin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="pillango.css">
+  <script src="pillango.js"></script>
+  <style id="jsbin-css">
+/* ==== GENERAL STYLES ==== */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ==== A SIMPLE TOP NAVIGATION ==== */
+nav {
+  font-size: 0;
+}
+nav ul {
+  background-color: #eee;
+  text-align: center;
+}
+nav li {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.1rem;
+  line-height: 3rem;
+  height: 3rem;
+  border-bottom: 1px solid #ccc;
+}
+nav a {
+  text-decoration: none;
+  color: #C74F78;
+  display: block;
+}
+nav a:hover {
+  background-color: #fff;
+  transition: background-color .3s ease-in-out;
+}
+nav a.active {
+  background-color: #c74f78;
+  color: #eee;
+}
+@media (min-width: 600px) {
+
+  nav li {
+    display: inline-block;
+    border-bottom: none;
+    width: 7.5rem;
+  }
+
+}
+
+canvas {margin: 10rem;}
+</style>
+</head>
+<body>
+  <nav>
+  <ul>
+    <li><a href="#">Tenyerezéshez</a></li>
+    <li><a href="inga5-1.html">5.leckéhez</a></li>
+    <li><a href="inga5-2.html">5.leckéhez</a></li>
+    <li><a href="inga5-3.html">5.leckéhez</a></li>
+    <li><a href="inga5-4.html">5.leckéhez</a></li>
+    <li><a href="ingaH.html">9.leckéhez</a></li>
+    <li><a href="ingaHell.html">9.leckéhez</a></li>
+    <li><a href="feher.html">9.leckéhez</a></li>
+    <li><a href="fekete.html">9.leckéhez</a></li>
+    <li><a href="pillango.html" class="active">Pillangó</a></li>
+     </ul>
+    </nav>
+  <canvas id="myCanvas" height="550" width="1000" style="border: 1px solid black"></canvas>
+<script id="jsbin-javascript">
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+var hue = 360;
+
+var circle = function(x,y,r,color) {
+  context.beginPath();
+  context.arc(x, y, r, 0, Math.PI*2, true);
+  context.stroke(); 
+  context.fill();
+  return ;
+}
+
+for (i = 1; i <= 8; i++) {
+  var hueChange = hue-i*360/7
+context.fillStyle = 'hsla(' + hueChange + ', 50%, 45%, 1)';
+circle(250+25*i,300,200-25*i);
+  
+circle(650-25*i,300,200-25*i);
+ };
+
+
+/*var animate = function(context, draw_callback) {
+  var nextFrame = window.requestAnimationFrame ||
+                  window.mozRequestAnimationFrame ||
+                  window.msRequestAnimationFrame;
+  nextFrame(function callback(timestamp) {
+    context.save();
+    context.setTransform(1, 0, 0, 1, 0, 0);
+    context.clearRect (0, 0, context.canvas.width, context.canvas.height);
+    draw_callback(timestamp);
+    context.restore();
+    nextFrame(callback);
+  });
+};
+
+animate(context, function(t) {        // A t az animáció kezdete óta eltelt idő (ms-ben).
+  context.translate(t / 100, 0);      // A kurzort a bal felső sarokból balra mozgatjuk.
+  context.strokeRect(0, 0, 100, 100); // Rajzolunk egy 100x100 pixeles téglalapot.
+});*/
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

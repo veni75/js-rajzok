@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by veni75 (http://jsbin.com/sesesip/6/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="haromszogalagut">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Practice JavaScript by drawing</title>
+</head>
+<body>
+  <canvas id="myCanvas" height="350" width="450" style="border: 1px solid black"></canvas>
+  <div id="clock">12:13:14</div>
+<script id="jsbin-javascript">
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+var canvasWidth = canvas.width;
+var canvasHeight = canvas.height;
+
+/*context.beginPath();
+context.moveTo(canvasWidth/6, canvasHeight*2/6);
+context.lineTo(canvasWidth/3, canvasHeight/6);
+context.lineTo(canvasWidth*2/6, canvasHeight*2/6);
+context.lineTo(canvasWidth/6, canvasHeight*2/6);
+context.stroke();*/
+
+
+
+for (i = 1; i <= 30; i++) {
+context.beginPath();
+context.moveTo(100+5*i, 130+5*i) ;
+context.lineTo(150+5*i, 50+5*i);
+context.lineTo(200+5*i, 130+5*i);
+context.lineTo(100+5*i, 130+5*i);
+  context.strokeStyle = "gray";
+context.stroke();
+ };
+</script>
+</body>
+</html>
