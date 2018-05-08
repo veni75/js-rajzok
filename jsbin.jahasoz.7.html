@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by veni75 (http://jsbin.com/jahasoz/7/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Tetractys">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Practice JavaScript by drawing</title>
+<style id="jsbin-css">
+#myCanvas {
+  background-color: white;
+}
+</style>
+</head>
+<body>
+  <canvas id="myCanvas" height="300" width="450" style="border: 1px solid black"></canvas>
+<script id="jsbin-javascript">
+
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+var canvasWidth = canvas.width;
+var canvasHeight = canvas.height;
+
+ function triangle (x,y,a) {  
+context.beginPath();
+context.moveTo(x,y);
+context.lineTo(x+2*a/3, y+a);
+context.lineTo(x-2*a/3, y+a);
+context.lineTo(x, y);
+context.strokeStyle = '';
+context.fillStyle = '';
+  context.stroke();
+  context.fill();
+  return ;
+ }
+
+for (i = 1; i <= 3; i++) {
+ for (j = 1; j <= 3; j++) {
+  if (i == 1 && j == 1) {
+  context.strokeStyle = 'red';
+    context.fillStyle = 'red';
+      
+  } else if (i == 2 && j == 1) {
+    context.strokeStyle = 'white';
+    context.fillStyle = 'white';
+    } else if (i == 3 && j == 1) {
+    context.strokeStyle = 'white';
+    context.fillStyle = 'white';
+      } else if (i == 3 && j == 2) {
+    context.strokeStyle = 'white';
+    context.fillStyle = 'white';
+  }else if (j == 2) {
+    context.strokeStyle = 'rgba(0, 255, 0, 1)';
+    context.fillStyle = 'rgba(0, 255, 0, 1)';
+    
+  } else {
+     context.strokeStyle = 'rgba(0, 0, 255, 1)';
+    context.fillStyle = 'rgba(0, 0, 255, 1)';
+      } 
+  triangle((i-1-j/2)*70+canvasWidth/2,j*60,50);
+   context.stroke();
+    context.fill();
+  }
+}
+
+
+
+
+
+</script>
+</body>
+</html>
